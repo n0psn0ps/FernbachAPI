@@ -127,10 +127,10 @@ def get_one_user(current_user, public_id):
 @app.route('/api/v1/user', methods=['POST'])
 @token_required
 def create_user():
-
+"""
     if not current_user.admin:
         return jsonify({'message' : 'Cannot perform that action. Need username and password parameters.'})
-
+"""
     data = request.get_json()
 ### Change the hashing type? MD5 ####
     hashed_password = generate_password_hash(data['password'], method='md5')
@@ -154,7 +154,7 @@ def promote_user(current_user, public_id):
     user.admin = True
     db.session.commit()
     return jsonify({'message' : 'The user has been promoted'})
-
+"""
 @app.route('/api/v1/user/<public_id>', methods=['DELETE'])
 @token_required
 def delete_user(current_user, public_id):
@@ -171,7 +171,7 @@ def delete_user(current_user, public_id):
     db.session.commit()
 
     return jsonify({'message' : 'User has been deleted.'})
-
+"""
 ### SQL injection vulnerability will live here ####
 
 @app.route('/api/v1/login')
@@ -249,7 +249,7 @@ def get_one_todo(ship_id):
     ship_data['user_id'] = ship.user_id
     
     return (ship_data)
-
+"""
 @app.route('/shipment', methods=['POST'])
 @token_required
 def create_shipment(current_user):
@@ -263,21 +263,6 @@ def create_shipment(current_user):
     db.session.commit()
 
     return jsonify({'message' : "Shipment created!"})
-
-@app.route('/shipment/<ship_id>', methods=['PUT'])
-@token_required
-def complete_shipment(current_user, ship_id):
-    ship = Ship.query.filter_by(id=todo_id, user_id=current_user.id).first()
-
-    if not current_user.admin:
-        return jsonify({'message' : 'Admin privileges required. Cannot perform that action.'})
-
-    if not ship:
-        return jsonify({'message' : 'No shipment found!'})
-
-    todo.complete = True
-    db.session.commit()
-    return jsonify({'message' : 'Shipment has been completed.'})
 
 @app.route('/shipment/<ship_id>', methods=['DELETE'])
 @token_required
@@ -294,7 +279,7 @@ def delete_shipment(current_user, ship_id):
     db.session.commit()
     
     return jsonify({'message' : 'Shipment deleted.'})
-
+"""
 ### Command Injection ###
 @app.route('/api/v0/usage')
 def ping():
