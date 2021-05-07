@@ -1,4 +1,4 @@
-FROM python:3.6-stretch
+FROM python:3.10.0b1-alpine3.13
 COPY . /Fernbach
 WORKDIR /Fernbach
 ADD . /Fernbach
