@@ -1,0 +1,7 @@
+flask
+flask_sqlalchemy
+uuid
+werkzeug
+pyjwt==1.7.1
+datetime
+urllib3
