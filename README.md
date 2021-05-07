@@ -1,7 +1,12 @@
 # FernbachAPI
-Welcome to Fernbach, a vulnerable API written in the Flask micro web framework. The intent of this API is for testing the OWASP top ten vulnerabilities in an API environment. Below is the low privilege user credentials there are quite a few endpoints and users present many of which are not listed. It is suggested to use a scanner to locate these endpoints Burp Suite is prefered. As well as using some basic methodologies to find these other users.
+Welcome to Fernbach, a vulnerable API written in the Flask micro web framework. The intent of this API is for testing the OWASP top ten vulnerabilities in an API environment. Below is the low privilege user credentials there are quite a few endpoints and users present many of which are not listed. It is suggested to use a scanner to locate these endpoints Burp Suite, ZAP, or Ffuf work best. It is suggested to try to understand the application first before diving into the code so as not to spoil anything.
 
-Status: Check that the server is up and running. This is just to see if the docker image has worked successfully. http://127.0.0.1:5000/status
+To start the application run:
+
+docker-compose up
+
+Status: Check that the server is up and running. This is just to see if the docker image has worked successfully. <br \>
+http://127.0.0.1:5000/status
 
 User Credentials:
 ```
