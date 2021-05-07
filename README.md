@@ -4,11 +4,11 @@ Welcome to Fernbach, a vulnerable API written in the Flask micro web framework. 
 Status: Check that the server is up and running. This is just to see if the docker image has worked successfully. http://127.0.0.1:5000/status
 
 User Credentials:
-
+'''
 username = user <br />
 password = user1234 <br />
 public_id = 5a139b37-98b0-4562-8b54-6c728e3d9794 <br />
-
+'''
 Example API Calls:
 
 The login endpoint allows for the user to create a token with a GET request using the username and password in the authorization header and use this auth token with the header "x-access-token" to make actions within the API endpoints:
@@ -16,7 +16,7 @@ The login endpoint allows for the user to create a token with a GET request usin
 Login:
 
 Token Request:
-
+'''
 GET /api/v1/login HTTP/1.1 <br />
 Host: localhost:5000 <br />
 Authorization: Basic YWRtaW46YWRtaW4xMjM0 <br />
@@ -30,9 +30,9 @@ Content-Length: 48<br />
 'username' : 'user', <br />
 'password' : 'user1234' <br />
 }<br />
-
+'''
 Use the public_id to make changes on the /api/v1/user with the token at the endpoint:
-
+'''
 GET /api/v1/user/[public_id] HTTP/1.1 <br />
 x-access-token: [from the login endpoint] <br />
 Authorization: Basic dXNlcjp1c2VyMTIzNA== <br />
@@ -41,7 +41,7 @@ User-Agent: PostmanRuntime/7.26.8 <br />
 Host: localhost:5000 <br />
 Accept-Encoding: gzip, deflate <br />
 Connection: close Content-Length: 80<br />
-
+'''
 Check the demo user's shipment status at the GET shipment endpoint:
 
 http://127.0.0.1:5000/shipment/13
