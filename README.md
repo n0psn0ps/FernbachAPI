@@ -51,6 +51,20 @@ Check the demo user's shipment status at the GET shipment endpoint:
 
 http://127.0.0.1:5000/shipment/13
 
+# +++ SPOILER ++++
+# Current Vulnerabilities
+```
+- SQLi
+- SSTI
+- Command Injection
+- IDOR / MFLAC
+- Brute forcing
+- Deprecated Endpoints
+- Admin Interface Accessible
+- Sensitive Data Exposure
+- SSRF
+- ....
+```
 # To do:
 ```
 [ ] XXE
