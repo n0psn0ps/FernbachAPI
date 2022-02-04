@@ -50,3 +50,10 @@ Connection: close Content-Length: 80
 Check the demo user's shipment status at the GET shipment endpoint:
 
 http://127.0.0.1:5000/shipment/13
+
+# To do:
+```
+[ ] XXE
+[ ] Session Fixation
+[ ] CORS
+``` 
